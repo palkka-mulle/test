@@ -1,23 +1,25 @@
 const player = document.querySelector('.player');
-const diceButton = document.querySelector('.dice-button');
+const dynamicButton = document.getElementById('dynamic-button');
+const map = document.querySelector('.map');
 
-diceButton.addEventListener('click', rollDice);
+window.addEventListener('resize', positionDynamicButton);
+window.addEventListener('load', positionDynamicButton);
 
-function rollDice() {
-  const randomNum = Math.floor(Math.random() * 6) + 1;
-  diceButton.textContent = `Dice: ${randomNum}`;
-  movePlayer(randomNum);
+function positionDynamicButton() {
+  const mapRect = map.getBoundingClientRect();
+  const offsetX = 200; // Adjust based on your background
+  const offsetY = 100; // Adjust based on your background
+  
+  const buttonX = mapRect.left + offsetX;
+  const buttonY = mapRect.top + offsetY;
+
+  dynamicButton.style.left = `${buttonX}px`;
+  dynamicButton.style.top = `${buttonY}px`;
 }
 
-function movePlayer(steps) {
-  const currentPosition = parseInt(player.style.left) || 0;
-  const newPosition = currentPosition + (steps * 40); // Adjust as needed
-  player.style.left = `${newPosition}px`;
-
-  // Check if player has reached the destination
-  if (newPosition >= 600) {
-    alert('Congratulations! You reached the destination!');
-    player.style.left = '0';
-    diceButton.textContent = 'Roll Dice';
-  }
+function movePlayerToPosition() {
+  // Your logic to move the player's position
 }
+
+// ... Your existing code ...
+
