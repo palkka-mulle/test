@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.game-container {
+  position: relative;
+}
+
+.map {
+  background-image: url('1.jpg');
+  background-size: cover;
+  width: 600px;
+  height: 400px;
+}
+
+.player {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  top: 0;
+  left: 0;
+}
+
+.dice-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
