@@ -1,19 +1,23 @@
-const positionButtons = document.querySelectorAll('.position-button');
 const player = document.querySelector('.player');
 const diceButton = document.querySelector('.dice-button');
 
-// Position buttons' click event handlers
-positionButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const position = button.getBoundingClientRect();
-    movePlayerToPosition(position.top, position.left);
-  });
-});
+diceButton.addEventListener('click', rollDice);
 
-// Move the player to a specific position
-function movePlayerToPosition(top, left) {
-  player.style.top = `${top}px`;
-  player.style.left = `${left}px`;
+function rollDice() {
+  const randomNum = Math.floor(Math.random() * 6) + 1;
+  diceButton.textContent = `Dice: ${randomNum}`;
+  movePlayer(randomNum);
 }
 
-// ... Your existing code ...
+function movePlayer(steps) {
+  const currentPosition = parseInt(player.style.left) || 0;
+  const newPosition = currentPosition + (steps * 40); // Adjust as needed
+  player.style.left = `${newPosition}px`;
+
+  // Check if player has reached the destination
+  if (newPosition >= 600) {
+    alert('Congratulations! You reached the destination!');
+    player.style.left = '0';
+    diceButton.textContent = 'Roll Dice';
+  }
+}
