@@ -19,8 +19,10 @@ body {
 }
 
 .map {
+  background-image: url('https://i.postimg.cc/4dykJkZy/1.png');
+  background-size: 100% 100%;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .position-button {
