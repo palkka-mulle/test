@@ -1,4 +1,3 @@
-const player = document.querySelector('.player');
 const dynamicButton = document.getElementById('dynamic-button');
 const map = document.querySelector('.map');
 
@@ -17,9 +16,11 @@ function positionDynamicButton() {
   dynamicButton.style.top = `${buttonY}px`;
 }
 
-function movePlayerToPosition() {
-  // Your logic to move the player's position
-}
+dynamicButton.addEventListener('mouseover', () => {
+  dynamicButton.innerHTML = 'aaaa';
+});
 
-// ... Your existing code ...
+dynamicButton.addEventListener('mouseout', () => {
+  dynamicButton.innerHTML = '';
+});
 
