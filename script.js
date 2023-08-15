@@ -23,4 +23,3 @@ dynamicButton.addEventListener('mouseover', () => {
 dynamicButton.addEventListener('mouseout', () => {
   dynamicButton.innerHTML = '';
 });
-
