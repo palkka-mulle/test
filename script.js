@@ -1,9 +1,19 @@
-const dynamicButton = document.getElementById('dynamic-button');
+const positionButtons = document.querySelectorAll('.position-button');
+const player = document.querySelector('.player');
+const diceButton = document.querySelector('.dice-button');
 
-dynamicButton.addEventListener('mouseover', () => {
-  dynamicButton.innerHTML = 'aaaa';
+// Position buttons' click event handlers
+positionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const position = button.getBoundingClientRect();
+    movePlayerToPosition(position.top, position.left);
+  });
 });
 
-dynamicButton.addEventListener('mouseout', () => {
-  dynamicButton.innerHTML = '';
-});
+// Move the player to a specific position
+function movePlayerToPosition(top, left) {
+  player.style.top = `${top}px`;
+  player.style.left = `${left}px`;
+}
+
+// ... Your existing code ...
