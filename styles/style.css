@@ -19,26 +19,21 @@ body {
   height: 100%;
 }
 
-.position-button {
+.player {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 2; /* Place the button above the map */
-}
-
-.position-button:hover::before {
-  content: 'aaaa';
-  position: absolute;
-  top: -30px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  top: 0;
   left: 0;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 5px;
-  border-radius: 5px;
 }
 
-/* ... Your existing styles ... */
+.dice-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
