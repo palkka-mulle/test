@@ -26,6 +26,7 @@ body {
   display: relative; /* Important for positioning within .map */
 }
 
+
 .position-button {
   position: absolute;
   width: 50px;
@@ -34,10 +35,6 @@ body {
   border: none;
   cursor: pointer;
   z-index: 2; /* Place the button above the map */
-
-  /* Positioning the button relative to .map */
-  left: calc(1/7 * 100%); /* 1/7 of the horizontal width */
-  top: calc(1/5 * 100%); /* 1/5 of the vertical height */
 }
 
 .position-button:hover::before {
