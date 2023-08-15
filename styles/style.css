@@ -9,7 +9,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* Place the background behind content */
+  z-index: 1; /* Adjust this to a higher value */
 }
 
 .map {
@@ -38,9 +38,6 @@ body {
   cursor: pointer;
 }
 
-
-/* ... Your existing styles ... */
-
 .game-container {
   position: relative;
 }
@@ -54,6 +51,3 @@ body {
   cursor: pointer;
   z-index: 2; /* Place the button above the map */
 }
-
-/* ... Your existing styles ... */
-
