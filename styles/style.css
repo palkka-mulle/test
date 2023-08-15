@@ -23,7 +23,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: transparent;
+  background-color: #ffffff;
   border: none;
   cursor: pointer;
   z-index: 2; /* Place the button above the map */
@@ -36,9 +36,16 @@ body {
 .position-button:hover::before {
   content: 'aaaa';
   position: absolute;
-  top: -30px;
-  left: 0;
-  width: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  z-index: 2; /* Place the button above the map */
+
+  /* Positioning the button relative to .map */
+  left: calc(1/7 * 100%); /* 1/7 of the horizontal width */
+  top: calc(1/5 * 100%); /* 1/5 of the vertical height */
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 5px;
