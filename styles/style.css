@@ -31,7 +31,7 @@ body {
   position: absolute;
   width: 500px;
   height: 500px;
-  background-color: #ffffff;
+  background-color: #000000;
   border: none;
   cursor: pointer;
   z-index: 2; /* Place the button above the map */
