@@ -76,8 +76,7 @@ body {
   -webkit-transform-origin: 50% 50% -100px;
   -moz-transform-origin: 50% 50% -100px;
   margin: 200px auto;
-  animation:scroll 2s linear 0s 2 alternate;
-            -webkit-animation:scroll 2s linear 0s 2 alternate;/*设置骰子动画效果*/
+
   background-color: #E8E8E9;
   border-radius: 20px;
 }
