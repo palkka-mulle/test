@@ -19,7 +19,3 @@ const dice = document.querySelector('.dice');
 diceLabel.addEventListener('click', function () {
   dice.style.animationPlayState = 'paused';
 });
-
-            } 
-        },1)
-    })
