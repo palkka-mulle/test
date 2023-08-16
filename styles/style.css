@@ -59,15 +59,22 @@ body {
 }
 
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .dice {
   background-image: url(https://assets.codepen.io/2002878/random-dice.png);
   width: 366px;
   height: 366px;
   background-position: 0% 100%;
-  animation: .2s steps(5, start) random infinite;
+  animation: rollDice .2s steps(5, start) infinite;
 }
 
-@keyframes random {
+@keyframes rollDice {
   to {
     background-position: 100% 100%;
   }
