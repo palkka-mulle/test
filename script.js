@@ -14,10 +14,10 @@ function rollDice() {
 // Rest of your script code for dynamic button positioning
 
 
-$('#group').click(function(){
-        $('#group').removeAttr('style');
-        setTimeout(function(){
-            var num =  Math.ceil(Math.random()*6);
+$('#group').click(function() {
+  $('#group').removeAttr('style');
+  setTimeout(function() {
+    var num = Math.ceil(Math.random() * 6);
             if(num==1){
                 $('#group').css({
                     'animation':'scroll 2s linear 0s 2 alternate',
