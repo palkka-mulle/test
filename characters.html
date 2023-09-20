@@ -1,30 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>左侧边栏网页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义标记示例</title>
     <style>
-        /* 基本样式设置 */
-        body {
-            display: flex;
-            margin: 0;
-            padding: 0;
-            background-color: #fffacd; /* 设置背景颜色为淡暖黄色 */
-        }
-
-        /* 左侧边栏样式 */
         .sidebar {
-            width: 12.5%;
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
+            width: 20%;
+            float: left;
+            background-color: #f1f1f1;
+            height: 100vh;
+            overflow-y: scroll;
         }
 
-        /* 其他样式不变... */
+        .content {
+            width: 80%;
+            float: left;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <!-- 左侧边栏和右侧内容区域的代码不变... -->
+    <div class="sidebar" id="sidebar">
+        <!-- 侧边栏标题将通过 JavaScript 动态添加 -->
+    </div>
+
+    <div class="content" id="content">
+        <!-- 内容将通过 JavaScript 动态添加 -->
+    </div>
+
+    <script>
+        // 自定义标记解析函数
+        function parseCustomTags() {
+            const sidebar = document.getElementById('sidebar');
+            const contentDiv = document.getElementById('content');
+
+            const customTags = document.querySelectorAll('biaoti, neirong');
+            let currentContentId = 0;
+
+            customTags.forEach(tag => {
+                if (tag.tagName === 'BIAOTI') {
+                    // 如果是<biaoti>标记，创建侧边栏链接
+                    const title = tag.textContent;
+                    const link = document.createElement('a');
+                    link.href = '#content-' + currentContentId;
+                    link.textContent = title;
+
+                    // 添加链接到侧边栏
+                    sidebar.appendChild(link);
+
+                    // 创建内容的锚点
+                    const contentAnchor = document.createElement('a');
+                    contentAnchor.id = 'content-' + currentContentId;
+                    contentAnchor.style.position = 'relative';
+                    contentAnchor.style.top = '-80px'; // 考虑到侧边栏高度
+
+                    // 添加锚点到内容区域
+                    contentDiv.appendChild(contentAnchor);
+                    currentContentId++;
+                } else if (tag.tagName === 'NEIRONG') {
+                    // 如果是<neirong>标记，创建内容
+                    const content = tag.textContent;
+                    contentDiv.lastChild.innerHTML += content; // 将内容添加到最后一个锚点
+                }
+            });
+        }
+
+        // 解析自定义标记
+        parseCustomTags();
+    </script>
+
+    <!-- 示例：使用自定义标记 -->
+    <biaoti>aaaaa</biaoti>
+    <neirong>这里是aaaaa的内容。</neirong>
+
+    <biaoti>bbbbb</biaoti>
+    <neirong>这里是bbbbb的内容。</neirong>
+
+    <!-- 添加更多自定义标记 -->
 </body>
 </html>
